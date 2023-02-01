@@ -2,6 +2,6 @@
 
 Esse aplicativo foi pra começar dar os primeiros passos em Flutter e aprender mais sobre essa tecnologia
 
-## Fotos
+## Screenshots
 
-_[Logo menos adiciono fotos do projeto aqui]_
+_[Logo menos adiciono screenshots do projeto aqui]_
