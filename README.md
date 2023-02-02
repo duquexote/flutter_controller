@@ -1,16 +1,7 @@
-# alura_flutter_curso_1
+# Aplicativo de Registrar Tarefas
 
-A new Flutter project.
+Esse aplicativo foi pra começar dar os primeiros passos em Flutter e aprender mais sobre essa tecnologia
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+_[Logo menos adiciono screenshots do projeto aqui]_
