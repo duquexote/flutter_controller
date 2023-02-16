@@ -1,5 +1,5 @@
-import 'package:alura_flutter_curso_1/screens/form_screen.dart';
-import 'package:alura_flutter_curso_1/screens/tela_inicial.dart';
+import 'package:alura_flutter_curso_1/data/task_inherited.dart';
+import 'package:alura_flutter_curso_1/screens/initial_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,16 +14,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
+
   @override
-  bool opacidade = true;
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const InitialScreen(),
+      home: TaskInherited(
+        child: const InitialScreen(),
+      ),
     );
   }
 }

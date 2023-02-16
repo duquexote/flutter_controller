@@ -1,9 +1,10 @@
+import 'package:alura_flutter_curso_1/data/task_inherited.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class FormScreen extends StatefulWidget {
-  const FormScreen({super.key});
+  const FormScreen({Key? key, required this.taskContext}) : super(key: key);
 
+  final BuildContext taskContext;
   @override
   State<FormScreen> createState() => _FormScreenState();
 }
@@ -44,7 +45,7 @@ class _FormScreenState extends State<FormScreen> {
                       },
                       controller: nameController,
                       textAlign: TextAlign.center,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Nome',
                         fillColor: Colors.white70,
@@ -53,7 +54,7 @@ class _FormScreenState extends State<FormScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8),
                     child: TextFormField(
                       validator: (value) {
                         if (value!.isEmpty ||
@@ -66,7 +67,7 @@ class _FormScreenState extends State<FormScreen> {
                       keyboardType: TextInputType.number,
                       controller: difficultyController,
                       textAlign: TextAlign.center,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Dificuldade',
                         fillColor: Colors.white70,
@@ -89,7 +90,7 @@ class _FormScreenState extends State<FormScreen> {
                       keyboardType: TextInputType.url,
                       controller: imageController,
                       textAlign: TextAlign.center,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Image Link',
                         fillColor: Colors.white70,
@@ -120,17 +121,19 @@ class _FormScreenState extends State<FormScreen> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
+                        TaskInherited.of(widget.taskContext).newTask(
+                            nameController.text,
+                            imageController.text,
+                            int.parse(difficultyController.text));
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                            content: Text('Salvando nova tarefa...'),
-                            duration: Duration(seconds: 1),
-                            backgroundColor: Color.fromARGB(255, 18, 75, 121),
+                            content: Text('Criando nova tarefa...'),
                           ),
                         );
                         Navigator.pop(context);
                       }
                     },
-                    child: Text('Adicionar!'),
+                    child: const Text('Adicionar!'),
                   )
                 ],
               ),
